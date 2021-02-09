@@ -1,0 +1,232 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.container{
+  display:flex;
+  min-height:100vh;
+  max-width:1440px;
+  margin: auto;
+  padding:15px;
+  flex-direction: column;
+}
+.alignCenter{
+  align-items: center;
+  justify-content: center;
+}
+.searchWrapper{
+  margin:5px 0;
+}
+.searchFilter{
+  display: flex;
+  flex-wrap: wrap;
+}
+.searchFilter input{
+  outline:0;
+  height:36px;
+  color:#666;
+  padding:0 8px;
+  min-width:140px;
+  font-size:0.85rem;
+  margin-right:10px;
+  background:#fff;
+  border:1px solid #eee;
+}
+a {
+  text-decoration: none;
+}
+h1,p{
+  margin:0;
+}
+.heading{
+  display: flex;
+  margin:0 0 10px;
+}
+.heading h1{
+  font-size: 0.95rem;;
+}
+.heading p{
+  font-size: 0.75rem;;
+}
+.heading >div{
+  margin-left:10px;
+}
+.typeFilter{
+  position: relative;
+}
+.typeFilter button{
+  height:36px;
+  font-size:0.85rem;
+  color:#666;
+  min-width:90px;
+  border:1px solid #eee;
+  background:#fff;
+  outline:0;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+ul {
+  visibility: hidden;
+  opacity: 0;
+  font-size:0.85rem;
+  min-width: 60px;
+  position: absolute;
+  transition: all 0.5s ease;
+  left: auto;
+  right:0;
+  display: none;
+  outline: 0;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+li {
+  clear: both;
+  color: #666;
+  display: block;
+  border:1px solid #eee;
+  background:#fff;
+  padding: 8px 20px;
+  position: relative;
+  text-decoration: none;
+  transition-duration: 0.3s;
+  text-transform: capitalize;
+}
+li+li{
+  border-top:0;
+}
+li span{
+  display: block;
+}
+li:hover {
+  background: #f2f2f2;
+  cursor: pointer;
+}
+.showMenu {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+/* Users */
+.wrapper{
+  color: rgb(64, 69, 83);
+  display: flex;
+  align-items: stretch;
+  flex-flow: row wrap;
+  margin: 10px 0;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  transition: all 0.5s ease 0s;
+}
+.infoWrapper{
+  cursor: pointer;
+  background:#f2f2f2;
+  overflow: hidden;
+  flex-basis:100%;
+  margin:0 0 15px 0;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+}
+.userInfo,.repoInfo{
+  display: flex;
+  flex-direction: row;
+}
+.infoWrapper h1{
+  font-size: 0.95rem;
+  margin-top: 15px;
+  padding:0 10px;
+}
+.info{
+  flex:1;
+  padding:10px;
+  overflow: hidden;
+}
+.info .imgWrapper{
+  width:100px;
+  border-radius:50px;
+  overflow: hidden;
+  margin-bottom:10px;
+}
+.info p.value{
+  font-size:0.75rem;
+  word-break: break-all;
+}
+.info p.head{
+  font-size:0.65rem;
+}
+.info p.value +p.head{
+  margin-top:5px;
+}
+.imgWrapper img{width:100%;}
+@keyframes dot-keyframes {
+  0% {
+    opacity: .4;
+    transform: scale(1, 1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    opacity: .4;
+    transform: scale(1, 1);
+  }
+}
+.loadingDots {
+  display: flex;
+  padding:10px;
+  align-items: center;
+}
+.dot {
+  animation: dot-keyframes 1.5s infinite ease-in-out;
+  background-color: #666;
+  border-radius: 100%;
+  height: 8px;
+  width: 8px;
+}
+.dot  + .dot {margin-left: 6px;}
+.dot:nth-child(2) {animation-delay: .5s;}
+.dot :nth-child(3) {animation-delay: 1s;}
+@media only screen and (min-width:500px){
+  .infoWrapper{
+    cursor: pointer;
+    background:#f2f2f2;
+    overflow: hidden;
+    flex-basis:calc(50% - 7.5px);
+    margin:0 15px 15px 0;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+  }
+  .infoWrapper:nth-child(2n){
+    margin-right:0
+  }
+  .searchFilter input{
+    width:220px;
+  }
+  .typeFilter button{
+    min-width:100px;
+  }
+}
+@media only screen and (min-width:768px){
+  .infoWrapper{
+    flex-basis: calc(33.33% - 10px);
+  }
+  .infoWrapper:nth-child(2n) {
+    margin-right:15px;
+  }
+  .infoWrapper:nth-child(3n){
+    margin-right:0
+  }
+}

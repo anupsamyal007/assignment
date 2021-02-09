@@ -1,0 +1,5 @@
+export const SEARCH_USER_SUCCESS = 'SEARCH_USER_SUCCESS';
+export const SEARCH_REPO_SUCCESS = 'SEARCH_REPO_SUCCESS';
+export const SEARCH_IN_PROPS = 'SEARCH_IN_PROPS';
+export const DATA_EMPTY = 'DATA_EMPTY';
+export const ERROR = 'ERROR';
